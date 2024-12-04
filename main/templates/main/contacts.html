@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <div class="contacts_page">
+        <div class="contacts_page_container">
+            <div class="contacts_page_info">
+                <h3>Контакты</h3>
+                <div class="contacts_page_info_items">
+                    <p><i class="bi bi-pin-map"></i> {{ address }}</p>
+                    <p><i class="bi bi-telephone"></i>{{ tel }}</p>
+                    <p><i class="bi bi-envelope"></i>{{ mail }}</p>
+                    <div>
+                        <a class="contacts_page_info_items_a" href="https://ru.pinterest.com/"><i class="bi bi-pinterest"></i></a>
+                        <a class="contacts_page_info_items_a" href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
+                        <a class="contacts_page_info_items_a" href="https://web.telegram.org"><i class="bi bi-telegram"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="contacts_page_connection_info">
+                <h3>Обратная связь</h3>
+                <div>
+                    <div class="contacts_page_connection_items_1">
+                        <input class="contacts_page_connection_items_1_input" type="text" placeholder="Имя *">
+                        <input class="contacts_page_connection_items_1_input" type="tel" placeholder="Телефон">
+                    </div>
+                    <div class="contacts_page_connection_items_2">
+                        <input class="contacts_page_connection_items_2_input" type="email" placeholder="E-mail *">
+                        <input class="contacts_page_connection_items_2_input" type="text" placeholder="Текст сообщения">
+                    </div>
+                </div>
+                <div class="contacts_page_connection_items_3">
+                    <input class="contacts_page_btn btn" type="submit">
+                    <div>
+                        <input type="checkbox">
+                        <p>{{ approval }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A42e499121436df1fe608dbae95628d833e43af6b753e61bdc38796aa98679f68&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+{% endblock %}

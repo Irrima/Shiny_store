@@ -313,3 +313,79 @@ button:focus{
 .about_page_items> img{
     width: 10vw;
 }
+
+
+/* contacts_________________________________________________page*/
+
+.contacts_page{
+    padding: 3% 6% 4%;
+    background: #7e9fa8;
+    color: #ffffff;
+    font-weight: 500;
+}
+.contacts_page_container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    /*flex-direction: row-reverse;*/
+}
+.contacts_page_info> h3{
+    margin-bottom: 15%;
+
+}
+h3{
+    font-size: 40px;
+    margin-bottom: 5%;
+}
+.contacts_page_info_items> p{
+    font-size: 18px;
+    margin-bottom: 6%;
+}
+.contacts_page_info_items_a{
+    color: #ffffff;
+    font-size: 30px;
+    margin-right: 8%;
+}
+.contacts_page_info_items_a:hover{
+    color: #c2d1e4;
+}
+.contacts_page_connection_info{
+    width: 47vw;
+}
+.contacts_page_connection_items_1,
+.contacts_page_connection_items_2{
+    display: flex;
+}
+.contacts_page_connection_items_1_input,
+.contacts_page_connection_items_2_input{
+    width: 22vw;
+    margin-bottom: 1.5%;
+    padding: 1.5%;
+    font-size: 18px;
+    background: #d8e5f3;
+    border: none;
+}
+.contacts_page_connection_items_1_input:last-child,
+.contacts_page_connection_items_2_input:last-child{
+    margin-left: 1.5%;
+}
+.contacts_page_connection_items_1_input:focus,
+.contacts_page_connection_items_2_input:focus{
+    outline: 0;
+    outline-offset: 0;
+}
+.contacts_page_connection_items_3> div{
+    display: flex;
+    padding-top: 2%;
+    font-size: 14px;
+}
+.contacts_page_connection_items_3> div> input{
+    margin-right: 1.2%;
+    width: 16px;
+}
+.contacts_page_btn{
+    background: #d8e5f3;
+}
+.contacts_page_btn:hover{
+    background: #c2d1e4;
+}
