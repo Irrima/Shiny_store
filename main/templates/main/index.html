@@ -40,16 +40,18 @@
 
 {% block about %}
     <div class="home_about">
-        <div class="home_about_title">
-            <h2>{{ home_about_title }}</h2>
-        </div>
         <div class="home_about_content">
             <div class="home_about_img">
                 <img src="{% static 'img/freepik-export.png' %}" alt="ель">
             </div>
-            <div class="home_about_text">
-                <p>{{ home_about_text }}</p>
-                <a class="btn" href="{% url 'about' %}">{{ home_about_btn }}</a>
+            <div class="home_about_container">
+                <div class="home_about_title">
+                    <h2>{{ home_about_title }}</h2>
+                </div>
+                <div class="home_about_text">
+                    <p>{{ home_about_text }}</p>
+                    <a class="btn" href="{% url 'main:about' %}">{{ home_about_btn }}</a>
+                </div>
             </div>
         </div>
     </div>

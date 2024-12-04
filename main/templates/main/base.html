@@ -21,9 +21,9 @@
         <div class="header_2">
             <p>{{ logo }}</p>
             <ul>
-                <a class="nav" href="#"><li>Главная</li></a>
+                <a class="nav" href="{% url 'main:index' %}"><li>Главная</li></a>
                 <a class="nav" href="#"><li>Каталог</li></a>
-{#                <a class="nav" href="#"><li>О нас</li></a>#}
+                <a class="nav" href="{% url 'main:about' %}"><li>О нас</li></a>
                 <a class="nav" href="#"><li>Контакты</li></a>
                 <a class="nav" href="#"><li>Оплата и доставка</li></a>
             </ul>
