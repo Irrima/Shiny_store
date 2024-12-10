@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="delivery_page">
+        <div class="delivery_page_intro">
+            <div class="delivery_page_intro_img">
+                <img src="{% static 'img/delivery.png' %}" alt="коробка с игрушками">
+            </div>
+            <div class="delivery_page_intro_title">
+                <h2>{{ title }}</h2>
+            </div>
+        </div>
+
+        <div class="delivery_page_content">
+            <h3>{{ courier_title }}</h3>
+            <h4>{{ courier_title_day }}</h4>
+            <p>{{ courier_express_city }}</p>
+            <br>
+            <h4>{{ courier_title_radius }}</h4>
+            <p>{{ courier_next_day }}</p>
+            <p>{{ courier_cost }}</p>
+            <br>
+            <h4>{{ courier_title_region }}</h4>
+            <p>{{ courier_cost_plus }}</p>
+            <br>
+            <p>{{ courier_delivery }}</p>
+        </div>
+
+        <div class="delivery_page_content">
+            <h3>{{ pickup_title }}</h3>
+            <p>{{ pickup_nearest }}</p>
+            <br>
+            <p>{{ pickup_address }}</p>
+            <br>
+            <p>{{ pickup_december }}</p>
+            <br>
+            <p>{{ pickup_payment }}</p>
+        </div>
+
+        <div class="delivery_page_content">
+            <h3>{{ points_of_issue_title }}</h3>
+            <p>{{ points_of_issue_delivery }}</p>
+            <br>
+            <h4>{{ points_of_issue_title_city }}</h4>
+            <p>{{ points_of_issue_address }}</p>
+            <br>
+            <h4>{{ points_of_issue_title_region }}</h4>
+            <p>{{ points_of_issue_registration }}</p>
+        </div>
+
+        <div class="delivery_page_content">
+            <h3>{{ delivery_title }}</h3>
+            <p>{{ delivery_transport_companies }}</p>
+            <br>
+            <h4>{{ delivery_title_terminal }}</h4>
+            <p>{{ delivery_terminal_price }}</p>
+            <br>
+            <h4>{{ delivery_title_courier }}</h4>
+            <p>{{ delivery_courier_price }}</p>
+            <br>
+            <h4>{{ delivery_title_customer }}</h4>
+            <p>{{ delivery_customer_price }}</p>
+            <br>
+            <p>{{ delivery_price }}</p>
+        </div>
+    </div>
+{% endblock %}
