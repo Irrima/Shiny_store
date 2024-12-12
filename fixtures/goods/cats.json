@@ -1,0 +1,74 @@
+[
+{
+  "model": "goods.categories",
+  "pk": 2,
+  "fields": {
+    "name": "Все товары",
+    "slug": "all"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 3,
+  "fields": {
+    "name": "Акции",
+    "slug": "stock"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 4,
+  "fields": {
+    "name": "Наборы",
+    "slug": "nabory"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 5,
+  "fields": {
+    "name": "Символ года",
+    "slug": "simvol-goda"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 6,
+  "fields": {
+    "name": "Животные",
+    "slug": "zhivotnye"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 7,
+  "fields": {
+    "name": "Люди",
+    "slug": "lyudi"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 8,
+  "fields": {
+    "name": "Шарики",
+    "slug": "shariki"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 9,
+  "fields": {
+    "name": "Сосульки",
+    "slug": "sosulki"
+  }
+},
+{
+  "model": "goods.categories",
+  "pk": 10,
+  "fields": {
+    "name": "Колокольчики",
+    "slug": "kolokolchiki"
+  }
+}
+]

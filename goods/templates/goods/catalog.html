@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Каталог товаров</h1>
+    <div class="catalog">
+        <div>
+            <ul class="catalog_category">
+                {% for category in categories %}
+                    <li><a class="catalog_category_items" href="{% url "catalog:index" %}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>]
+
+
+
+        <div class="catalog_content">
+
+        </div>
+    </div>
+{% endblock %}
