@@ -13,7 +13,7 @@
             </div>
             <div class="intro_text">
                 <p class="intro_paragraph">{{ intro_content }}</p>
-                <a class="btn btn_intro" href="#catalog">{{ intro_btn }}</a>
+                <a class="btn btn_intro" href="{% url 'goods:catalog' %}">{{ intro_btn }}</a>
             </div>
 
         </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="home_about_text">
                     <p>{{ home_about_text }}</p>
-                    <a class="btn" href="{% url 'main:about' %}">{{ home_about_btn }}</a>
+                    <a class="btn" href="{% url 'goods:catalog' %}">{{ home_about_btn }}</a>
                 </div>
             </div>
         </div>

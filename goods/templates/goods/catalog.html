@@ -1,4 +1,4 @@
-{% extends "main/base.html" %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block title %}
@@ -6,20 +6,35 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Каталог товаров</h1>
-    <div class="catalog">
-        <div>
-            <ul class="catalog_category">
+    <div class="catalog_page">
+        <div class="catalog_category">
+            <h4 class="catalog_category_title">Фильтры</h4>
+            <ul>
                 {% for category in categories %}
                     <li><a class="catalog_category_items" href="{% url "catalog:index" %}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
-        </div>]
-
-
-
-        <div class="catalog_content">
-
+        </div>
+        <div class="catalog">
+            <div class="catalog_title">
+                <h1>Каталог товаров</h1>
+            </div>
+            <div class="catalog_content">
+                {% for product in goods %}
+                    <div class="catalog_card">
+                        {% if product.image %}
+                            <img class="catalog_card_img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="catalog_card_img" src="{% static "img/no_image.jpg" %}" alt="Изображение товара">
+                        {% endif %}
+                        <div class="catalog_card_body">
+                            <p>{{ product.name }}</p>
+                            <p>{{ product.prise }}</p>
+                            <a href="#">в корзину</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

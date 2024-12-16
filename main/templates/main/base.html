@@ -22,7 +22,7 @@
             <p>{{ logo }}</p>
             <ul>
                 <a class="nav" href="{% url 'main:index' %}"><li>Главная</li></a>
-                <a class="nav" href="#"><li>Каталог</li></a>
+                <a class="nav" href="{% url 'goods:catalog' %}"><li>Каталог</li></a>
                 <a class="nav" href="{% url 'main:about' %}"><li>О нас</li></a>
                 <a class="nav" href="{% url 'main:contacts' %}"><li>Контакты</li></a>
                 <a class="nav" href="{% url 'main:delivery' %}"><li>Оплата и доставка</li></a>
@@ -30,10 +30,10 @@
         </div>
     </header>
 
-    {% block content %}
+    {% block content_intro %}
     {% endblock %}
 
-    {% block content_intro %}
+    {% block content %}
     {% endblock %}
 
 {#    {% block content_catalog %}#}

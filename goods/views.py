@@ -1,9 +1,11 @@
 from django.shortcuts import render
 
-from goods.models import Categories
+from goods.models import Categories, Products
+
 def catalog(request):
 
     categories = Categories.objects.all()
+    goods = Products.objects.all()
 
     context = {
         # header
@@ -12,9 +14,10 @@ def catalog(request):
         'tel': ' 8(989)1234567',
         'work': 'Работаем без выходных 9 - 18',
         'logo': 'shiny',
-
+        # content
 
         'categories': categories,
+        'goods': goods,
         # footer
 
         'img_info_1': 'Изображения на сайте от freepik',
