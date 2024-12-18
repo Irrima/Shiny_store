@@ -29,7 +29,16 @@
                         {% endif %}
                         <div class="catalog_card_body">
                             <p>{{ product.name }}</p>
-                            <p>{{ product.prise }}</p>
+                            {% if product.discount %}
+                                <p class="catalog_discount_sell_price">{{ product.discount }}%</p>
+                                <div class="catalog_discount_prise">
+                                    <p class="catalog_discount_old_prise"><s>{{ product.prise }}</s></p>
+                                    <p class="catalog_discount_new_prise">{{ product.sell_price }}</p>
+                                </div>
+
+                            {% else %}
+                                <p>{{ product.prise }}</p>
+                            {% endif %}
                             <a href="#">в корзину</a>
                         </div>
                     </div>
