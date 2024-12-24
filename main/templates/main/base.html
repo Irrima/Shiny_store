@@ -21,11 +21,11 @@
         <div class="header_2">
             <p>{{ logo }}</p>
             <ul>
-                <a class="nav" href="{% url 'main:index' %}"><li>Главная</li></a>
-                <a class="nav" href="{% url 'goods:catalog' %}"><li>Каталог</li></a>
-                <a class="nav" href="{% url 'main:about' %}"><li>О нас</li></a>
-                <a class="nav" href="{% url 'main:contacts' %}"><li>Контакты</li></a>
-                <a class="nav" href="{% url 'main:delivery' %}"><li>Оплата и доставка</li></a>
+                <li><a class="nav" href="{% url 'main:index' %}">Главная</a></li>
+                <li><a class="nav" href="{% url 'goods:index' 'all' %}">Каталог</a></li>
+                <li><a class="nav" href="{% url 'main:about' %}">О нас</a></li>
+                <li><a class="nav" href="{% url 'main:contacts' %}">Контакты</a></li>
+                <li><a class="nav" href="{% url 'main:delivery' %}">Оплата и доставка</a></li>
             </ul>
         </div>
     </header>
@@ -36,9 +36,6 @@
     {% block content %}
     {% endblock %}
 
-{#    {% block content_catalog %}#}
-{#    {% endblock %}#}
-
     {% block about %}
     {% endblock %}
 
@@ -46,9 +43,7 @@
     {% endblock %}
 
     <footer class="footer_image">
-            <p><a href="https://ru.freepik.com/free-photo/christmas-tree-space
-            -left_1435765.htm#fromView=search&page=3&position=51&uuid=8f20661c
-            -4c4b-4791-b860-97b28e045c13">{{ img_info_1}}</a></p>
+            <p><a href="https://ru.freepik.com/free-photo/christmas-tree-space-left_1435765.htm#fromView=search&page=3&position=51&uuid=8f20661c-4c4b-4791-b860-97b28e045c13">{{ img_info_1}}</a></p>
             <p>{{ img_info_2}}</p>
     </footer>
 </div>

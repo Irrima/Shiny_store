@@ -11,7 +11,7 @@
             <h4 class="catalog_category_title">Фильтры</h4>
             <ul>
                 {% for category in categories %}
-                    <li><a class="catalog_category_items" href="{% url "catalog:index" %}">{{ category.name }}</a></li>
+                    <li><a class="catalog_category_items" href="{% url "catalog:index" category.slug %}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -28,7 +28,9 @@
                             <img class="catalog_card_img" src="{% static "img/no_image.jpg" %}" alt="Изображение товара">
                         {% endif %}
                         <div class="catalog_card_body">
-                            <p>{{ product.name }}</p>
+
+
+                            <a href="{% url "catalog:product" product.slug %}">{{ product.name }}</a>
                             {% if product.discount %}
                                 <p class="catalog_discount_sell_price">{{ product.discount }}%</p>
                                 <div class="catalog_discount_prise">
@@ -46,4 +48,33 @@
             </div>
         </div>
     </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="pagination_link">
+                <a class="pagination_link_a {% if not goods.has_previous %}disabled{% endif %}"
+                   href="{% if goods.has_previous %}
+                   {% url "catalog:index" slug_url goods.previous_page_number %}
+                   {% else %}
+                   #
+                   {% endif %}">&#x3C</a>
+            </li>
+
+            {% for page in goods.paginator.page_range %}
+            {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+                <li class="pagination_link"><a class="pagination_link_a
+                {% if goods.number == page %}active{% endif %}"
+                href="{% url "catalog:index" slug_url page %}">{{ page }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            <li class="pagination_link">
+                <a class="pagination_link_a {% if not goods.has_next %}disabled{% endif %}"
+                   href="{% if goods.has_next %}
+                   {% url "catalog:index" slug_url goods.next_page_number %}
+                   {% else %}
+                   #
+                   {% endif %}">&#x3E</a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}

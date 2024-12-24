@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import render, get_list_or_404
 
 from goods.models import Categories, Products
 
-def catalog(request):
+def catalog(request, category_slug, page=1):
+
+    if category_slug == 'all':
+        goods = Products.objects.all()
+    else:
+        goods = get_list_or_404(Products, category__slug=category_slug)
+
+    paginator = Paginator(goods, 4)
+    current_page = paginator.page(page)
 
     categories = Categories.objects.all()
-    goods = Products.objects.all()
 
     context = {
         # header
@@ -17,7 +25,8 @@ def catalog(request):
         # content
 
         'categories': categories,
-        'goods': goods,
+        'goods': current_page,
+        'slug_url': category_slug,
         # footer
 
         'img_info_1': 'Изображения на сайте от freepik',
@@ -25,7 +34,9 @@ def catalog(request):
     }
     return render(request, 'goods/catalog.html', context)
 
-def product(request):
+def product(request, product_slug):
+
+    product: Products = Products.objects.get(slug=product_slug)
 
     context = {
         # header
@@ -35,7 +46,7 @@ def product(request):
         'work': 'Работаем без выходных 9 - 18',
         'logo': 'shiny',
         # content
-
+        'product': product,
         # footer
 
         'img_info_1': 'Изображения на сайте от freepik',

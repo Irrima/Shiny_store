@@ -75,6 +75,7 @@ button:focus{
     font-size: 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5% 5% 1.8%;
     text-transform: uppercase;
 }
@@ -295,6 +296,27 @@ button:focus{
 .catalog_discount_new_prise{
     color: #377226;
     font-size: 1.5vw;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.pagination_link{
+    background: #c4bfb9;
+    padding: 1%;
+    /*margin-bottom: 5%;*/
+    margin: 0 .15% 5%;
+}
+.pagination_link_a{
+    text-decoration: none;
+    color: #151411;
+    font-size: 20px;
+}
+.disabled{
+    color: #a3a4ab;
+}
+.active{
+    color: #377226;
 }
 
 /* about______________________________________________________page*/
