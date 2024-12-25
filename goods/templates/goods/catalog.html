@@ -52,9 +52,7 @@
         <ul class="pagination">
             <li class="pagination_link">
                 <a class="pagination_link_a {% if not goods.has_previous %}disabled{% endif %}"
-                   href="{% if goods.has_previous %}
-                   {% url "catalog:index" slug_url goods.previous_page_number %}
-                   {% else %}
+                   href="{% if goods.has_previous %}?page={{ goods.previous_page_number }}{% else %}
                    #
                    {% endif %}">&#x3C</a>
             </li>
@@ -63,15 +61,13 @@
             {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
                 <li class="pagination_link"><a class="pagination_link_a
                 {% if goods.number == page %}active{% endif %}"
-                href="{% url "catalog:index" slug_url page %}">{{ page }}</a></li>
+                href="?page={{ page }}">{{ page }}</a></li>
             {% endif %}
             {% endfor %}
 
             <li class="pagination_link">
                 <a class="pagination_link_a {% if not goods.has_next %}disabled{% endif %}"
-                   href="{% if goods.has_next %}
-                   {% url "catalog:index" slug_url goods.next_page_number %}
-                   {% else %}
+                   href="{% if goods.has_next %}?page={{ goods.next_page_number }}{% else %}
                    #
                    {% endif %}">&#x3E</a>
             </li>
